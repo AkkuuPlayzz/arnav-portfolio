@@ -13,7 +13,7 @@
   <header class="hero">
     <h1>Arnav Makhloga</h1>
     <p>Creative Video Editor | 1+ Year Experience | CapCut Specialist</p>
-    <a href="#workSection" class="btn">See My Work</a>
+    <a href="#" id="showWorkBtn" class="btn">See My Work</a>
     <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" class="insta-link" target="_blank">
       <img src="insta.png" alt="Instagram Logo" class="insta-icon"> Insta
     </a>
@@ -22,11 +22,11 @@
   <!-- About Section -->
   <section class="about">
     <h2>👋 About Me</h2>
-    <p class="large-text">Hey! I'm <strong>Arnav Makhloga</strong>, a passionate and results-driven video editor with over a year of hands-on experience in short-form content creation. I specialize in editing YouTube Shorts, Instagram Reels, and promotional videos using <strong>CapCut</strong>. I believe in storytelling through motion — whether you're a creator or a brand, my edits aim to grab attention, deliver impact, and leave a lasting impression.</p>
+    <p class="big-text">I’m Arnav Makhloga, a passionate video editor with over a year of experience. I specialize in editing short-form content for YouTube, Instagram, and more. Whether you need engaging reels, cinematic intros, or branded videos, I can help bring your ideas to life.</p>
   </section>
 
-  <!-- Work Section -->
-  <section id="workSection">
+  <!-- Work Section (Hidden Initially) -->
+  <section id="workSection" style="display:none;">
     <h2>🎬 My Edited Videos</h2>
     <div class="video-container">
       <video controls>
@@ -51,9 +51,9 @@
   </section>
 
   <!-- Hire Me Section -->
-  <section class="hire" id="hire">
+  <section class="hire">
     <h2>💼 Hire Me</h2>
-    <p>Need a professional editor for your next video project? Fill out this form below and let’s work together.</p>
+    <p>Want a paid project? Fill out the form below with budget & feedback:</p>
     <form action="https://formspree.io/f/xknldrno" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
@@ -82,5 +82,16 @@
     <p>© 2025 Arnav Makhloga | All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript for showing videos -->
+  <script>
+    const workBtn = document.getElementById("showWorkBtn");
+    const workSection = document.getElementById("workSection");
+
+    workBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      workSection.style.display = "block";
+      workSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
