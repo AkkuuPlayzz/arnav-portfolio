@@ -1,187 +1,133 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
   color: #333;
 }
 
-h1, h2, h3 {
+header.hero {
+  background: #111;
+  color: white;
   text-align: center;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-p {
-  margin: 10px 0;
-  text-align: center;
-}
-
-/* HERO */
-.hero {
-  background: #333;
-  color: #fff;
   padding: 60px 20px;
-  text-align: center;
 }
-.hero .btn {
-  display: inline-block;
-  background: #4caf50;
-  color: #fff;
-  padding: 12px 20px;
-  margin: 15px 10px;
+
+header h1 {
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  background: #444;
+  color: white;
+  padding: 10px 18px;
+  margin: 8px;
+  border: none;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #666;
 }
 
 .insta-link {
+  background: #E1306C;
+  padding: 8px 14px;
+  border-radius: 5px;
   display: inline-flex;
   align-items: center;
-  margin-top: 10px;
-  font-size: 16px;
-  color: #fff;
   text-decoration: none;
+  color: white;
 }
 
 .insta-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
-  vertical-align: middle;
 }
 
-/* ABOUT */
-.about {
+section {
   padding: 40px 20px;
-  background: #fff;
-}
-
-.large-text {
-  font-size: 20px;
-  line-height: 1.8;
-  max-width: 800px;
+  text-align: center;
+  max-width: 900px;
   margin: auto;
-  color: #444;
 }
 
-/* WORK SECTION */
-#workSection {
-  padding: 40px 20px;
-  background: #f0f0f0;
+.about .big-text {
+  font-size: 1.3em;
+  line-height: 1.6;
 }
 
 .video-container {
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  margin-top: 20px;
 }
 
 video {
-  width: 100%;
-  max-width: 480px;
+  width: 300px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* SUPPORT SECTION */
-.support {
-  background: #fff;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.donate-buttons .btn {
-  background: #2196f3;
-  color: #fff;
-  padding: 10px 16px;
-  margin: 5px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 16px;
-  display: inline-block;
-}
-
-/* HIRE SECTION */
-.hire {
-  padding: 40px 20px;
-  background: #f9f9f9;
+.donate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 form {
-  max-width: 500px;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  max-width: 500px;
+  margin: auto;
 }
 
 input, textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 15px;
 }
 
-button[type="submit"] {
-  background: #333;
-  color: #fff;
+button {
+  background: #111;
+  color: white;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
 }
 
-button[type="submit"]:hover {
-  background: #000;
-}
-
-/* CONTACT SECTION */
-.contact {
-  background: #fff;
-  padding: 40px 20px;
-}
-
-/* FOOTER */
-footer {
+button:hover {
   background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
 }
 
-/* RESPONSIVE */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
 @media (max-width: 768px) {
   .video-container {
     flex-direction: column;
-    align-items: center;
   }
-  .large-text {
-    font-size: 18px;
-  }
-  .insta-link {
-    font-size: 14px;
-  }
-  .insta-icon {
-    width: 18px;
-    height: 18px;
-  }
-  .hero h1 {
-    font-size: 26px;
-  }
-  .hero p {
-    font-size: 16px;
-  }
-  button[type="submit"] {
-    font-size: 15px;
+
+  video {
+    width: 100%;
   }
 }
