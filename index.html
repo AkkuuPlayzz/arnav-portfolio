@@ -3,132 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arnav's Portfolio</title>
-
-  <!-- Favicon & Meta -->
-  <link rel="icon" href="favicon.jpg" type="image/jpeg" />
-  <meta name="description" content="Arnav's Portfolio showcasing edited videos and work." />
-  <meta name="keywords" content="Arnav, portfolio, videos, editor, work" />
-  <meta name="author" content="Arnav Rawat" />
-  <meta property="og:title" content="Arnav's Portfolio" />
-  <meta property="og:description" content="Watch Arnav's best video edits here." />
-  <meta property="og:image" content="favicon.jpg" />
-
-  <!-- Internal CSS -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-      color: #333;
-    }
-
-    h1 {
-      margin-top: 40px;
-      font-size: 36px;
-    }
-
-    .btn {
-      margin-top: 25px;
-      background-color: #222;
-      color: white;
-      padding: 12px 24px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #444;
-    }
-
-    #workSection {
-      display: none;
-      margin-top: 40px;
-      animation: fadeIn 0.6s ease forwards;
-    }
-
-    .video-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 20px;
-    }
-
-    video {
-      width: 320px;
-      max-width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background: #222;
-      color: #eee;
-    }
-
-    a {
-      color: #66c0f4;
-      text-decoration: none;
-    }
-  </style>
+  <title>Arnav Makloga - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Welcome to Arnav's Portfolio</h1>
-
-  <!-- CTA Button -->
+<header>
+  <h1>Arnav Makloga</h1>
+  <p>Professional Video Editor | CapCut Specialist</p>
   <button class="btn" onclick="showWork()">See My Work</button>
+</header>
 
-  <!-- Hidden Work Section -->
-  <div id="workSection">
-    <h2 style="margin-bottom: 20px;">🎬 My Edited Videos</h2>
-    <div class="video-container">
-      <!-- Make sure these video files exist in your GitHub repo -->
-      <video controls>
-        <source src="vid1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <video controls>
-        <source src="vid2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+<!-- Work Section -->
+<section id="workSection">
+  <h2>🎬 My Edited Videos</h2>
+  <div class="video-container">
+    <video controls>
+      <source src="vid1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="vid2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
+</section>
 
-  <footer>
-    <p>© 2025 Arnav Rawat | <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank">Instagram</a></p>
-  </footer>
+<!-- Contact Section -->
+<section>
+  <h2>📩 Contact Me</h2>
+  <p>For inquiries or projects, use the form below.</p>
+  <form action="https://formspree.io/f/xnnvlnjg" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
-  <!-- Script -->
-  <script>
-    function showWork() {
-      document.getElementById("workSection").style.display = "block";
-    }
-  </script>
+<!-- Donation Section -->
+<section class="donate">
+  <h2>💰 Support My Work</h2>
+  <p>If you want to support me, choose any amount below:</p>
+  <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR">Donate ₹10</a>
+  <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR">Donate ₹50</a>
+  <a href="upi://pay?pa=7302017538@fam&am=100&cu=INR">Donate ₹100</a>
+  <a href="upi://pay?pa=7302017538@fam">Custom Amount</a>
+</section>
+
+<footer>
+  <p>© 2025 Arnav Makloga | <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank">Instagram</a></p>
+</footer>
+
+<script>
+function showWork() {
+  document.getElementById("workSection").style.display = "block";
+}
+</script>
 </body>
 </html>
-
