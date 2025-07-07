@@ -2,76 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arnav Makhloga - Video Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arnav Makhloga - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
-<header>
-  <h1>Arnav Makhloga</h1>
-  <p>Creative Video Editor | 1+ Year Experience | CapCut Specialist</p>
-  <button class="btn" onclick="showWork()">See My Work</button>
-</header>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Arnav Makhloga</h1>
+    <p>Creative Video Editor | 1+ Year Experience | CapCut Specialist</p>
+    <a href="#workSection" class="btn">See My Work</a>
+    <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" class="insta-link" target="_blank">
+      <img src="insta.png" alt="Instagram Logo" class="insta-icon"> Insta
+    </a>
+  </header>
 
-<!-- About Me -->
-<section>
-  <h2>👋 About Me</h2>
-  <p>I’m Arnav Makhloga, a passionate video editor with 1+ year of hands-on experience in short-form content. I edit using CapCut and make engaging reels and YouTube shorts that grab attention and tell stories.</p>
-</section>
+  <!-- About Section -->
+  <section class="about">
+    <h2>👋 About Me</h2>
+    <p>I’m Arnav Makhloga, a passionate video editor with 1+ year of hands-on experience. I edit short-form content using CapCut to create reels and YouTube shorts that grab attention and tell stories.</p>
+  </section>
 
-<div class="insta-link">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-  <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank">@x_grasshopper</a>
-</div>
+  <!-- Work Section -->
+  <section id="workSection">
+    <h2>🎬 My Edited Videos</h2>
+    <div class="video-container">
+      <video controls>
+        <source src="Vid1.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="Vid2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
 
-<!-- Work Section -->
-<section id="workSection" style="display:none;">
-  <h2>🎬 My Edited Videos</h2>
-  <div class="video-container">
-    <video controls>
-      <source src="Vid1.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <video controls>
-      <source src="Vid2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>📩 Contact Me</h2>
+    <p>Interested in working together? Fill out the form below:</p>
+    <form action="https://formspree.io/f/xknldrno" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <div class="g-recaptcha" data-sitekey="6LdLPG8rAAAAADQpV4gwBaenAY0isat3l0FeYDbc"></div>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-<!-- Contact Section -->
-<section>
-  <h2>📩 Contact Me</h2>
-  <p>Interested in working together? Fill out the form below:</p>
-  <form action="https://formspree.io/f/xnnvlnjg" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <footer>
+    <p>© 2025 Arnav Makhloga. All rights reserved.</p>
+  </footer>
 
-<!-- Donate Section -->
-<section class="donate">
-  <h2>💰 Support My Work</h2>
-  <p>If you'd like to support my journey, you can donate below:</p>
-  <div class="donate-buttons">
-    <a href="upi://pay?pa=7302017538@fam&am=10&cu=INR">₹10</a>
-    <a href="upi://pay?pa=7302017538@fam&am=50&cu=INR">₹50</a>
-    <a href="upi://pay?pa=7302017538@fam&am=100&cu=INR">₹100</a>
-    <a href="upi://pay?pa=7302017538@fam">Custom</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 Arnav Makhloga | <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank">Instagram</a></p>
-</footer>
-
-<script>
-function showWork() {
-  document.getElementById("workSection").style.display = "block";
-}
-</script>
 </body>
 </html>
