@@ -3,45 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnav's Colorful Contact Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Arnav's Vibrant Contact Page</title>
+  <link rel="stylesheet" href="style_arnav_300.css" />
 </head>
 <body>
   <header>
-    <h1>Welcome to Arnav's World</h1>
-    <p class="tagline">Creative | Energetic | Friendly</p>
+    <div class="container">
+      <h1>Arnav Makloga</h1>
+      <p>Your friendly neighborhood developer</p>
+    </div>
   </header>
 
-  <nav class="navbar">
+  <nav>
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Portfolio</a></li>
       <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="contact-section">
-    <h2>Let's Get in Touch!</h2>
-    <p class="intro">Fill out the form below and I'll get back to you as soon as I can.</p>
-    <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+  <main>
+    <section class="intro">
+      <h2>Let's Connect</h2>
+      <p>Got a question, project, or just want to say hi? Fill out the form!</p>
+    </section>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
+    <section class="form-section">
+      <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email..." required>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write something..." required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
 
   <div id="successModal" class="modal">
     <div class="modal-content">
       <h3>Thanks for contacting!</h3>
-      <p>We appreciate you reaching out. Expect a reply soon.</p>
+      <p>We'll be in touch very soon.</p>
       <button id="closeModal">Close</button>
     </div>
   </div>
@@ -67,14 +74,14 @@
           modal.style.display = 'flex';
           form.reset();
         } else {
-          alert('There was a problem. Please try again.');
+          alert('Submission failed. Try again.');
         }
       }).catch(error => {
-        alert('There was a problem. Please try again.');
+        alert('Submission error. Try again.');
       });
     });
 
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
     });
   </script>
