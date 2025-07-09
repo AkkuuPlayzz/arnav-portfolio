@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnav Makloga Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arnav's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- 🔄 Loading Spinner -->
+  <!-- 🌀 Loading Spinner -->
   <div id="spinner" class="spinner-container">
     <div class="spinner"></div>
   </div>
 
-  <!-- 🔗 Navigation Bar -->
+  <!-- 🔗 Navbar -->
   <nav class="navbar">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -23,104 +23,113 @@
     </ul>
   </nav>
 
-  <!-- 🏠 Home Section -->
+  <!-- 🏠 Home -->
   <section id="home" class="section home">
-    <h1>Hi, I'm Arnav</h1>
-    <p>Creative. Focused. Always Learning.</p>
+    <h1>Arnav Makloga</h1>
+    <p>Creative video editor, passionate about visuals.</p>
   </section>
 
-  <!-- 👤 About Section -->
+  <!-- 👤 About -->
   <section id="about" class="section about">
     <h2>About Me</h2>
-    <p>I'm a passionate developer who loves building websites that are both beautiful and useful. I enjoy experimenting with HTML, CSS, and JS to bring ideas to life!</p>
+    <p>I edit videos that tell stories. From cuts to color grading, I love turning raw clips into engaging content.</p>
   </section>
 
-  <!-- 💼 Work Section -->
+  <!-- 🎥 Work -->
   <section id="work" class="section work">
-    <h2>My Projects</h2>
-    <div class="work-container">
-      <div class="work-card">Portfolio Website</div>
-      <div class="work-card">JavaScript Game</div>
-      <div class="work-card">UI Design Concept</div>
-    </div>
+    <h2>See My Work</h2>
+    <button class="work-btn" onclick="openModal('video1')">Watch Vid1</button>
+    <button class="work-btn" onclick="openModal('video2')">Watch Vid2</button>
   </section>
 
-  <!-- ✉️ Contact Section -->
+  <!-- 📽️ Modal Video 1 -->
+  <div id="video1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('video1')">&times;</span>
+      <video controls>
+        <source src="Vid1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- 📽️ Modal Video 2 -->
+  <div id="video2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('video2')">&times;</span>
+      <video controls>
+        <source src="Vid2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- ✉️ Contact -->
   <section id="contact" class="section contact">
-    <h2>Get in Touch</h2>
+    <h2>Contact Me</h2>
     <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
 
-      <!-- Visible CAPTCHA -->
       <label for="captcha">What is 4 + 3?</label>
-      <input type="text" id="captcha" name="captcha" required placeholder="Answer here" />
-
-      <!-- Hidden anti-bot field -->
-      <input type="text" name="_gotcha" style="display: none;" />
+      <input type="text" id="captcha" name="captcha" placeholder="Answer here" required />
+      <input type="text" name="_gotcha" style="display:none">
 
       <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <!-- ✅ Success Modal -->
+  <!-- ✅ Success Popup -->
   <div id="successModal" class="modal">
     <div class="modal-content">
       <h2>Thank you!</h2>
-      <p>Your message has been received.</p>
-      <button id="closeModal">Close</button>
+      <p>Your message has been received. I'll get back to you soon.</p>
+      <button onclick="closeModal('successModal')">Close</button>
     </div>
   </div>
 
   <!-- 👣 Footer -->
   <footer>
-    <p>&copy; 2025 Arnav Makloga | Designed with passion.</p>
+    <p>&copy; 2025 Arnav Makloga | Designed with passion and creativity.</p>
   </footer>
 
-  <!-- ⚙️ Script -->
+  <!-- 🧠 Scripts -->
   <script>
     window.addEventListener("load", () => {
       document.getElementById("spinner").style.display = "none";
     });
 
-    const form = document.getElementById("contactForm");
-    const modal = document.getElementById("successModal");
-    const closeModal = document.getElementById("closeModal");
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
 
-    form.addEventListener("submit", function (e) {
-      const captchaValue = document.getElementById("captcha").value;
-      if (captchaValue.trim() !== "7") {
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function(e) {
+      const captcha = document.getElementById("captcha").value.trim();
+      if (captcha !== "7") {
         e.preventDefault();
-        alert("Wrong CAPTCHA. Please try again.");
+        alert("Wrong CAPTCHA. Try again.");
         return;
       }
-
-      e.preventDefault(); // Stop default
+      e.preventDefault();
       const data = new FormData(form);
-
       fetch(form.action, {
         method: "POST",
         body: data,
-        headers: { Accept: "application/json" },
-      }).then((response) => {
+        headers: { Accept: "application/json" }
+      }).then(response => {
         if (response.ok) {
-          modal.style.display = "flex";
+          openModal("successModal");
           form.reset();
         } else {
           alert("Something went wrong. Try again.");
         }
       });
-    });
-
-    closeModal.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
     });
   </script>
 
