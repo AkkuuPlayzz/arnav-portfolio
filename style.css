@@ -1,4 +1,3 @@
-/* RESET & BODY */
 * {
   margin: 0;
   padding: 0;
@@ -6,287 +5,160 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+  background: #fefefe;
   color: #333;
-  line-height: 1.6;
-  animation: fadeIn 1s ease-in;
 }
 
-/* SPINNER */
+/* Spinner */
 .spinner-container {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  width: 100%; height: 100%;
   background: white;
-  z-index: 9999;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 .spinner {
   width: 60px;
   height: 60px;
   border: 8px solid #eee;
-  border-top: 8px solid #f39c12;
+  border-top: 8px solid orange;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
   background: #2c3e50;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-}
-.navbar li {
-  margin: 0 20px;
+  gap: 30px;
 }
 .navbar a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
 }
 .navbar a:hover {
-  color: #f1c40f;
+  color: orange;
 }
 
-/* SECTIONS */
+/* Sections */
 .section {
   padding: 60px 20px;
   text-align: center;
 }
-.home {
-  background: #f9f9f9;
-}
-.about {
-  background: #fff5e1;
-}
-.work {
-  background: #fdf2f8;
-}
-.contact {
-  background: #e8f0fe;
-}
-
-/* HEADINGS */
 .section h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
+}
+.section p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
 }
 
-/* WORK SECTION */
-.work-container {
-  display: flex;
+/* Work Button */
+.work-btn {
+  padding: 12px 25px;
+  margin: 10px;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.work-btn:hover {
+  background: #e67e22;
+}
+
+/* Modal Video */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
+  z-index: 999;
 }
-.work-card {
+.modal-content {
   background: white;
-  padding: 30px;
-  width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 20px;
   border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 90%;
 }
-.work-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+.modal-content video {
+  width: 100%;
+  height: auto;
 }
-/* CONTACT FORM */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Contact */
 form {
-  max-width: 450px;
+  max-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-form input,
-form textarea {
+form input, form textarea {
   padding: 12px;
+  font-size: 1rem;
   border: 2px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-}
-form textarea {
-  resize: vertical;
-}
-form label {
-  text-align: left;
-  font-weight: bold;
-  margin-top: 10px;
+  border-radius: 5px;
 }
 form button {
   padding: 12px;
-  font-size: 16px;
-  background-color: #2ecc71;
-  border: none;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-form button:hover {
-  background-color: #27ae60;
-}
-
-/* MODAL POPUP */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 400px;
-  text-align: center;
-  animation: popUp 0.4s ease;
-}
-.modal-content h2 {
-  color: #2ecc71;
-  margin-bottom: 10px;
-}
-.modal-content p {
-  font-size: 1rem;
-  color: #555;
-}
-.modal-content button {
-  margin-top: 20px;
-  padding: 10px 20px;
   background: #2ecc71;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
 }
-.modal-content button:hover {
-  background-color: #27ae60;
+form button:hover {
+  background: #27ae60;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   background: #2c3e50;
   color: white;
-  padding: 20px 0;
   text-align: center;
+  padding: 20px;
   margin-top: 40px;
-  font-size: 0.95rem;
 }
 
-/* ANIMATIONS */
+/* Animations */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes popUp {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-/* RESPONSIVE DESIGN */
+
+/* Responsive */
 @media (max-width: 768px) {
   .navbar ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
-  .work-container {
-    flex-direction: column;
-    align-items: center;
+  .modal-content video {
+    max-height: 300px;
   }
-  .work-card {
-    width: 90%;
-  }
-  form {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 15px;
-  }
-  .section h2 {
-    font-size: 1.6rem;
-  }
-  .navbar a {
-    font-size: 16px;
-  }
-}
-
-/* SMOOTH SCROLL */
-html {
-  scroll-behavior: smooth;
-}
-
-/* CUSTOM BUTTON EFFECT */
-button:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
-}
-
-/* CARD SHADOWS */
-.work-card {
-  border: 2px solid #ffcb05;
-  background: linear-gradient(145deg, #ffffff, #f2f2f2);
-}
-
-/* GRADIENT OVERLAY TEXT */
-.section h1,
-.section h2 {
-  background: linear-gradient(to right, #f12711, #f5af19);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* SECTION TRANSITION */
-.section {
-  transition: all 0.4s ease-in-out;
-}
-.section:hover {
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-/* SPACER (lines to make ~350 lines total) */
-.spacer {
-  height: 100px;
-  visibility: hidden;
-}
-
-/* CREDIT LINE */
-.credit {
-  text-align: center;
-  font-size: 12px;
-  padding: 10px;
-  color: #888;
-}
-
-/* EXTRA BUFFER FOR LINE COUNT */
-:root {
-  --main-color: #3498db;
-  --accent-color: #f1c40f;
-  --danger-color: #e74c3c;
-  --safe-color: #2ecc71;
 }
