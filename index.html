@@ -1,68 +1,82 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arnav's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arnav Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- 🌀 Loading Spinner -->
+  <!-- 🔄 Spinner -->
   <div id="spinner" class="spinner-container">
     <div class="spinner"></div>
   </div>
 
   <!-- 🔗 Navbar -->
   <nav class="navbar">
+    <div class="logo">Arnav Portfolio</div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#donate">Donate</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- 🏠 Home -->
   <section id="home" class="section home">
-    <h1>Arnav Makloga</h1>
-    <p>Creative video editor, passionate about visuals.</p>
+    <h1>Welcome to Arnav's Creative World</h1>
+    <p>I'm a passionate video editor turning ideas into motion.</p>
+    <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" class="insta-btn" target="_blank">📸 Follow on Instagram</a>
   </section>
 
   <!-- 👤 About -->
   <section id="about" class="section about">
     <h2>About Me</h2>
-    <p>I edit videos that tell stories. From cuts to color grading, I love turning raw clips into engaging content.</p>
+    <p>
+      Hey, I'm Arnav — a creative video editor with a deep love for storytelling. I blend transitions, effects, timing, and emotion to create content that connects. Whether it’s YouTube videos, reels, or full edits — I aim for perfection.
+    </p>
   </section>
 
-  <!-- 🎥 Work -->
+  <!-- 🎬 Work -->
   <section id="work" class="section work">
     <h2>See My Work</h2>
-    <button class="work-btn" onclick="openModal('video1')">Watch Vid1</button>
-    <button class="work-btn" onclick="openModal('video2')">Watch Vid2</button>
+    <button class="work-btn" onclick="openModal('video1')">▶ Watch Vid1</button>
+    <button class="work-btn" onclick="openModal('video2')">▶ Watch Vid2</button>
   </section>
 
-  <!-- 📽️ Modal Video 1 -->
+  <!-- 🎥 Video Popups -->
   <div id="video1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('video1')">&times;</span>
       <video controls>
-        <source src="Vid1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="Vid1.mp4" type="video/mp4" />
       </video>
     </div>
   </div>
-
-  <!-- 📽️ Modal Video 2 -->
   <div id="video2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('video2')">&times;</span>
       <video controls>
-        <source src="Vid2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="Vid2.mp4" type="video/mp4" />
       </video>
     </div>
   </div>
+
+  <!-- 💖 Donate -->
+  <section id="donate" class="section donate">
+    <h2>Support My Work</h2>
+    <p>If you like my edits, consider donating a small amount.</p>
+    <div class="donate-buttons">
+      <button>₹10</button>
+      <button>₹50</button>
+      <button>₹100</button>
+      <button>Custom Amount</button>
+    </div>
+  </section>
 
   <!-- ✉️ Contact -->
   <section id="contact" class="section contact">
@@ -71,67 +85,59 @@
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-
-      <label for="captcha">What is 4 + 3?</label>
-      <input type="text" id="captcha" name="captcha" placeholder="Answer here" required />
+      <label for="captcha">What is 5 + 2?</label>
+      <input type="text" id="captcha" required />
       <input type="text" name="_gotcha" style="display:none">
-
-      <button type="submit">Send Message</button>
+      <button type="submit">Send</button>
     </form>
   </section>
 
-  <!-- ✅ Success Popup -->
+  <!-- ✅ Success Message -->
   <div id="successModal" class="modal">
     <div class="modal-content">
-      <h2>Thank you!</h2>
-      <p>Your message has been received. I'll get back to you soon.</p>
+      <h2>Thanks for Messaging!</h2>
+      <p>We'll be in touch very soon. Keep creating magic.</p>
       <button onclick="closeModal('successModal')">Close</button>
     </div>
   </div>
 
   <!-- 👣 Footer -->
   <footer>
-    <p>&copy; 2025 Arnav Makloga | Designed with passion and creativity.</p>
+    <p>&copy; 2025 Arnav Makloga | Designed with passion.</p>
   </footer>
 
-  <!-- 🧠 Scripts -->
+  <!-- 🔧 Scripts -->
   <script>
     window.addEventListener("load", () => {
       document.getElementById("spinner").style.display = "none";
     });
-
     function openModal(id) {
       document.getElementById(id).style.display = "flex";
     }
-
     function closeModal(id) {
       document.getElementById(id).style.display = "none";
     }
 
     const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function(e) {
-      const captcha = document.getElementById("captcha").value.trim();
-      if (captcha !== "7") {
-        e.preventDefault();
-        alert("Wrong CAPTCHA. Try again.");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (document.getElementById("captcha").value.trim() !== "7") {
+        alert("Wrong CAPTCHA");
         return;
       }
-      e.preventDefault();
-      const data = new FormData(form);
       fetch(form.action, {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" }
-      }).then(response => {
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      }).then((response) => {
         if (response.ok) {
           openModal("successModal");
           form.reset();
         } else {
-          alert("Something went wrong. Try again.");
+          alert("Submission failed.");
         }
       });
     });
   </script>
-
 </body>
 </html>
