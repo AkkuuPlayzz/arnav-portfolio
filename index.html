@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arnav Portfolio</title>
   <link rel="stylesheet" href="style.css" />
- <link rel="icon" href="Icon.png" type="image/jpeg">
+  <link rel="icon" type="image/png" href="Icon.png" />
 </head>
 <body>
 
-  <!-- 🔄 Spinner -->
+  <!-- Spinner -->
   <div id="spinner" class="spinner-container">
     <div class="spinner"></div>
   </div>
 
-  <!-- 🔗 Navbar -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Arnav Portfolio</div>
     <ul>
@@ -26,94 +27,96 @@
     </ul>
   </nav>
 
-  <!-- 🏠 Home -->
+  <!-- Home -->
   <section id="home" class="section home">
-    <h1>Welcome to Arnav's Creative World</h1>
-    <p>I'm a passionate video editor turning ideas into motion.</p>
-    <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" class="insta-btn" target="_blank">📸 Follow on Instagram</a>
+    <h1>Arnav – Creative Video Editor</h1>
+    <p>I turn raw clips into engaging, emotional stories that connect.</p>
+    <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank" class="btn insta">Follow on Instagram</a>
   </section>
 
-  <!-- 👤 About -->
+  <!-- About -->
   <section id="about" class="section about">
     <h2>About Me</h2>
-    <p>
-      Hey, I'm Arnav — a creative video editor with a deep love for storytelling. I blend transitions, effects, timing, and emotion to create content that connects. Whether it’s YouTube videos, reels, or full edits — I aim for perfection.
-    </p>
+    <p>I’m Arnav, a passionate video editor. I specialize in transforming raw footage into clean, crisp, creative edits. Whether it's gaming content, cinematic trailers, or montages—I add the polish your story deserves.</p>
   </section>
 
-  <!-- 🎬 Work -->
+  <!-- Work -->
   <section id="work" class="section work">
     <h2>See My Work</h2>
-    <button class="work-btn" onclick="openModal('video1')">▶ Watch Vid1</button>
-    <button class="work-btn" onclick="openModal('video2')">▶ Watch Vid2</button>
+    <button onclick="openModal('video1')" class="btn">🎬 Watch Vid1</button>
+    <button onclick="openModal('video2')" class="btn">🎬 Watch Vid2</button>
   </section>
 
-  <!-- 🎥 Video Popups -->
+  <!-- Video Modals -->
   <div id="video1" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('video1')">&times;</span>
+      <span onclick="closeModal('video1')" class="close">&times;</span>
       <video controls>
         <source src="Vid1.mp4" type="video/mp4" />
+        Your browser does not support video.
       </video>
     </div>
   </div>
   <div id="video2" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('video2')">&times;</span>
+      <span onclick="closeModal('video2')" class="close">&times;</span>
       <video controls>
         <source src="Vid2.mp4" type="video/mp4" />
+        Your browser does not support video.
       </video>
     </div>
   </div>
 
-  <!-- 💖 Donate -->
+  <!-- Donate -->
   <section id="donate" class="section donate">
     <h2>Support My Work</h2>
-    <p>If you like my edits, consider donating a small amount.</p>
-    <div class="donate-buttons">
-      <button>₹10</button>
-      <button>₹50</button>
-      <button>₹100</button>
-      <button>Custom Amount</button>
+    <p>If you liked my edits, consider supporting me below.</p>
+    <div class="donate-options">
+      <img src="your_qr_code.png" alt="Donate QR" class="qr" />
+      <p>Or UPI: <strong>arnav@ybl</strong></p>
+      <button class="btn">Donate ₹10</button>
+      <button class="btn">Donate ₹50</button>
+      <button class="btn">Donate ₹100</button>
     </div>
   </section>
 
-  <!-- ✉️ Contact -->
+  <!-- Contact -->
   <section id="contact" class="section contact">
     <h2>Contact Me</h2>
     <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <label for="captcha">What is 5 + 2?</label>
+      <label for="captcha">What is 2 + 3?</label>
       <input type="text" id="captcha" required />
-      <input type="text" name="_gotcha" style="display:none">
-      <button type="submit">Send</button>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
-  <!-- ✅ Success Message -->
+  <!-- Success Popup -->
   <div id="successModal" class="modal">
     <div class="modal-content">
-      <h2>Thanks for Messaging!</h2>
-      <p>We'll be in touch very soon. Keep creating magic.</p>
-      <button onclick="closeModal('successModal')">Close</button>
+      <h2>Thanks for messaging!</h2>
+      <p>I'll get back to you soon. Stay creative!</p>
+      <button onclick="closeModal('successModal')" class="btn">Close</button>
     </div>
   </div>
 
-  <!-- 👣 Footer -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Arnav Makloga | Designed with passion.</p>
+    <p>© 2025 Arnav Makloga. Built with ❤️ and creativity.</p>
   </footer>
 
-  <!-- 🔧 Scripts -->
+  <!-- Script -->
   <script>
     window.addEventListener("load", () => {
       document.getElementById("spinner").style.display = "none";
     });
+
     function openModal(id) {
       document.getElementById(id).style.display = "flex";
     }
+
     function closeModal(id) {
       document.getElementById(id).style.display = "none";
     }
@@ -121,7 +124,7 @@
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (document.getElementById("captcha").value.trim() !== "7") {
+      if (document.getElementById("captcha").value.trim() !== "5") {
         alert("Wrong CAPTCHA");
         return;
       }
@@ -134,10 +137,11 @@
           openModal("successModal");
           form.reset();
         } else {
-          alert("Submission failed.");
+          alert("Message failed. Try again.");
         }
       });
     });
   </script>
+
 </body>
 </html>
