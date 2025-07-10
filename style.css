@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f5f7fa;
+  background: #f7f9fc;
   color: #222;
   line-height: 1.6;
 }
@@ -21,13 +21,14 @@ a {
 /* Spinner */
 .spinner-container {
   position: fixed;
-  background: white;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 .spinner {
   width: 60px;
@@ -54,21 +55,21 @@ a {
 }
 .navbar .logo {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 .navbar ul {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 20px;
 }
-.navbar a {
+.navbar li a {
   color: white;
   font-weight: bold;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
-.navbar a:hover {
-  color: #f39c12;
+.navbar li a:hover {
+  color: #f1c40f;
 }
 
 /* Sections */
@@ -78,10 +79,10 @@ a {
 }
 .section h1, .section h2 {
   font-size: 2.5rem;
-  background: linear-gradient(to right, #f39c12, #e74c3c);
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #e74c3c, #f39c12);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
 }
 .section p {
   font-size: 1.1rem;
@@ -94,52 +95,80 @@ a {
   display: inline-block;
   padding: 12px 25px;
   font-size: 1rem;
-  background: #3498db;
-  color: white;
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
   cursor: pointer;
   margin: 10px 5px;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 .btn:hover {
-  background: #2980b9;
+  transform: scale(1.05);
 }
-
-/* Insta Button */
-.insta {
+.btn.insta {
   background: #e1306c;
+  color: white;
 }
-.insta:hover {
+.btn.insta:hover {
   background: #c1275a;
 }
 
-/* Modal (Videos, Success) */
+/* Gradient Button */
+.gradient {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 25px;
+}
+.gradient:hover {
+  background: linear-gradient(135deg, #4e08a9, #1650d4);
+}
+
+/* Floating Bubble */
+.floating-bubble {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 999;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Modals */
 .modal {
   position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.85);
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
 }
 .modal-content {
   background: white;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 25px;
   width: 90%;
   max-width: 600px;
-  text-align: center;
+  border-radius: 10px;
   position: relative;
 }
 .modal video {
   width: 100%;
   border-radius: 10px;
 }
-.close {
+.modal .close {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -149,26 +178,29 @@ a {
 }
 
 /* Donate Section */
-.donate-options {
-  margin-top: 20px;
-}
-.qr {
-  width: 200px;
-  margin: 10px auto;
-  display: block;
+.donate-box {
+  background: #fff;
+  padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 0 5px #aaa;
+  margin: 20px auto;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-.donate-options p {
+.donate-box p {
   font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+.donate-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Contact Form */
 form {
   max-width: 500px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -189,6 +221,17 @@ form textarea {
   min-height: 100px;
 }
 
+/* Success Modal Text */
+#successModal h2 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+#successModal p {
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
 /* Footer */
 footer {
   background: #2c3e50;
@@ -197,17 +240,6 @@ footer {
   font-size: 0.95rem;
   text-align: center;
   margin-top: 40px;
-}
-
-/* Success Modal Text */
-#successModal h2 {
-  color: #2ecc71;
-  margin-bottom: 10px;
-}
-#successModal p {
-  color: #444;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
 }
 
 /* Responsive */
@@ -225,9 +257,12 @@ footer {
     font-size: 2rem;
   }
   .modal-content {
-    max-width: 90%;
+    max-width: 95%;
   }
-  .qr {
-    width: 150px;
+  .floating-bubble {
+    right: 15px;
+    bottom: 15px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
   }
 }
