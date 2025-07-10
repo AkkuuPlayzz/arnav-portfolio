@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +6,8 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f7f9fc;
-  color: #222;
+  background: #0c1a38;
+  color: #eaeaea;
   line-height: 1.6;
 }
 html {
@@ -24,7 +24,7 @@ a {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: #0c1a38;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ a {
 .spinner {
   width: 60px;
   height: 60px;
-  border: 6px solid #ddd;
+  border: 6px solid #555;
   border-top: 6px solid #3498db;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -44,7 +44,7 @@ a {
 
 /* Navbar */
 .navbar {
-  background: #2c3e50;
+  background: #0f224d;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -54,8 +54,8 @@ a {
   z-index: 1000;
 }
 .navbar .logo {
-  color: white;
-  font-size: 1.7rem;
+  color: #ffffff;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 .navbar ul {
@@ -64,12 +64,12 @@ a {
   gap: 20px;
 }
 .navbar li a {
-  color: white;
+  color: #dcdcdc;
   font-weight: bold;
   transition: 0.3s;
 }
 .navbar li a:hover {
-  color: #f1c40f;
+  color: #3498db;
 }
 
 /* Sections */
@@ -78,22 +78,28 @@ a {
   text-align: center;
 }
 .section h1, .section h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
-  background: linear-gradient(45deg, #e74c3c, #f39c12);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f0f0f0;
 }
 .section p {
   font-size: 1.1rem;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto 20px;
+  color: #ccc;
+}
+.about-big {
+  font-size: 1.3rem;
+  color: #ddd;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 12px 28px;
   font-size: 1rem;
   border: none;
   border-radius: 25px;
@@ -114,14 +120,13 @@ a {
 
 /* Gradient Button */
 .gradient {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #2b7cff, #083db9);
   color: white;
   border: 2px solid transparent;
-  background-clip: padding-box;
   border-radius: 25px;
 }
 .gradient:hover {
-  background: linear-gradient(135deg, #4e08a9, #1650d4);
+  background: linear-gradient(135deg, #1a64d4, #082b94);
 }
 
 /* Floating Bubble */
@@ -129,11 +134,11 @@ a {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: linear-gradient(135deg, #3a8dff, #1048d9);
   color: white;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   cursor: pointer;
   z-index: 999;
   font-weight: bold;
@@ -141,7 +146,7 @@ a {
 }
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
@@ -157,12 +162,13 @@ a {
   z-index: 9999;
 }
 .modal-content {
-  background: white;
+  background: #ffffff;
   padding: 25px;
   width: 90%;
   max-width: 600px;
   border-radius: 10px;
   position: relative;
+  color: #222;
 }
 .modal video {
   width: 100%;
@@ -177,17 +183,18 @@ a {
   cursor: pointer;
 }
 
-/* Donate Section */
+/* Donate */
 .donate-box {
-  background: #fff;
+  background: #0f224d;
   padding: 25px;
   border-radius: 10px;
   margin: 20px auto;
   display: inline-block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .donate-box p {
   font-size: 1.2rem;
+  color: #fff;
   margin-bottom: 10px;
 }
 .donate-btns {
@@ -197,7 +204,7 @@ a {
   justify-content: center;
 }
 
-/* Contact Form */
+/* Contact */
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -210,7 +217,7 @@ form input, form textarea {
   font-size: 1rem;
   border: 2px solid #ccc;
   border-radius: 6px;
-  transition: 0.3s;
+  background: #f9f9f9;
 }
 form input:focus, form textarea:focus {
   border-color: #3498db;
@@ -220,8 +227,11 @@ form textarea {
   resize: vertical;
   min-height: 100px;
 }
+form label {
+  color: #fff;
+}
 
-/* Success Modal Text */
+/* Success Modal */
 #successModal h2 {
   color: #27ae60;
   margin-bottom: 10px;
@@ -234,7 +244,7 @@ form textarea {
 
 /* Footer */
 footer {
-  background: #2c3e50;
+  background: #0f224d;
   color: white;
   padding: 20px;
   font-size: 0.95rem;
@@ -254,7 +264,7 @@ footer {
     margin-top: 10px;
   }
   .section h1, .section h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
   .modal-content {
     max-width: 95%;
