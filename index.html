@@ -1,147 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Arnav Portfolio</title>
+  <link rel="icon" href="Icon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="Icon.png" />
 </head>
 <body>
 
-  <!-- Spinner -->
-  <div id="spinner" class="spinner-container">
-    <div class="spinner"></div>
+<!-- Spinner -->
+<div id="spinner" class="spinner-container">
+  <div class="spinner"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Arnav Portfolio</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Home -->
+<section id="home" class="section home">
+  <h1>🎬 Arnav – Creative Video Editor</h1>
+  <p>I bring stories to life through cinematic editing. Let’s make magic!</p>
+  <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank" class="btn insta">📷 Follow on Instagram</a>
+</section>
+
+<!-- About -->
+<section id="about" class="section about">
+  <h2>About Me</h2>
+  <p>Hey! I'm Arnav — a passionate video editor with experience in gaming content, reels, cinematic trailers and more. I help bring creativity and emotion into every frame I touch.</p>
+</section>
+
+<!-- Floating See My Work Bubble -->
+<div class="floating-bubble" onclick="scrollToWork()">See My Work</div>
+
+<!-- Work -->
+<section id="work" class="section work">
+  <h2>See My Work</h2>
+  <button onclick="openModal('video1')" class="btn gradient">▶️ Watch Vid1</button>
+  <button onclick="openModal('video2')" class="btn gradient">▶️ Watch Vid2</button>
+</section>
+
+<!-- Video Modals -->
+<div id="video1" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('video1')" class="close">&times;</span>
+    <video controls>
+      <source src="Vid1.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
   </div>
+</div>
+<div id="video2" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('video2')" class="close">&times;</span>
+    <video controls>
+      <source src="Vid2.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+</div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Arnav Portfolio</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#donate">Donate</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home -->
-  <section id="home" class="section home">
-    <h1>Arnav – Creative Video Editor</h1>
-    <p>I turn raw clips into engaging, emotional stories that connect.</p>
-    <a href="https://www.instagram.com/x_grasshopper?igsh=cm1heTJ4dXFha2Ex" target="_blank" class="btn insta">Follow on Instagram</a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section about">
-    <h2>About Me</h2>
-    <p>I’m Arnav, a passionate video editor. I specialize in transforming raw footage into clean, crisp, creative edits. Whether it's gaming content, cinematic trailers, or montages—I add the polish your story deserves.</p>
-  </section>
-
-  <!-- Work -->
-  <section id="work" class="section work">
-    <h2>See My Work</h2>
-    <button onclick="openModal('video1')" class="btn">🎬 Watch Vid1</button>
-    <button onclick="openModal('video2')" class="btn">🎬 Watch Vid2</button>
-  </section>
-
-  <!-- Video Modals -->
-  <div id="video1" class="modal">
-    <div class="modal-content">
-      <span onclick="closeModal('video1')" class="close">&times;</span>
-      <video controls>
-        <source src="Vid1.mp4" type="video/mp4" />
-        Your browser does not support video.
-      </video>
+<!-- Donate -->
+<section id="donate" class="section donate">
+  <h2>Support My Work ❤️</h2>
+  <p>Like my work? You can donate directly via UPI.</p>
+  <div class="donate-box">
+    <p><strong>UPI ID:</strong> 7302017538@fam</p>
+    <div class="donate-btns">
+      <button class="btn gradient">₹10</button>
+      <button class="btn gradient">₹50</button>
+      <button class="btn gradient">₹100</button>
+      <button class="btn gradient">Custom Amount</button>
     </div>
   </div>
-  <div id="video2" class="modal">
-    <div class="modal-content">
-      <span onclick="closeModal('video2')" class="close">&times;</span>
-      <video controls>
-        <source src="Vid2.mp4" type="video/mp4" />
-        Your browser does not support video.
-      </video>
-    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section contact">
+  <h2>Contact Me</h2>
+  <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <label for="captcha">What is 4 + 3?</label>
+    <input type="text" id="captcha" required />
+    <button type="submit" class="btn gradient">Send Message</button>
+  </form>
+</section>
+
+<!-- Success Message -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <h2>Thanks for contacting!</h2>
+    <p>I’ll reach out shortly. Until then, keep creating awesome things ✨</p>
+    <button onclick="closeModal('successModal')" class="btn">Close</button>
   </div>
+</div>
 
-  <!-- Donate -->
-  <section id="donate" class="section donate">
-    <h2>Support My Work</h2>
-    <p>If you liked my edits, consider supporting me below.</p>
-    <div class="donate-options">
-      <img src="your_qr_code.png" alt="Donate QR" class="qr" />
-      <p>Or UPI: <strong>arnav@ybl</strong></p>
-      <button class="btn">Donate ₹10</button>
-      <button class="btn">Donate ₹50</button>
-      <button class="btn">Donate ₹100</button>
-    </div>
-  </section>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Arnav Makloga. All Rights Reserved.</p>
+</footer>
 
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm" action="https://formspree.io/f/xovwodgr" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <label for="captcha">What is 2 + 3?</label>
-      <input type="text" id="captcha" required />
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+<!-- Scripts -->
+<script>
+  window.addEventListener("load", () => {
+    document.getElementById("spinner").style.display = "none";
+  });
 
-  <!-- Success Popup -->
-  <div id="successModal" class="modal">
-    <div class="modal-content">
-      <h2>Thanks for messaging!</h2>
-      <p>I'll get back to you soon. Stay creative!</p>
-      <button onclick="closeModal('successModal')" class="btn">Close</button>
-    </div>
-  </div>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Arnav Makloga. Built with ❤️ and creativity.</p>
-  </footer>
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
 
-  <!-- Script -->
-  <script>
-    window.addEventListener("load", () => {
-      document.getElementById("spinner").style.display = "none";
-    });
-
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (document.getElementById("captcha").value.trim() !== "7") {
+      alert("Wrong CAPTCHA. Try again.");
+      return;
     }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (document.getElementById("captcha").value.trim() !== "5") {
-        alert("Wrong CAPTCHA");
-        return;
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    }).then((response) => {
+      if (response.ok) {
+        openModal("successModal");
+        form.reset();
+      } else {
+        alert("Message failed. Try again.");
       }
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      }).then((response) => {
-        if (response.ok) {
-          openModal("successModal");
-          form.reset();
-        } else {
-          alert("Message failed. Try again.");
-        }
-      });
     });
-  </script>
+  });
+
+  function scrollToWork() {
+    document.querySelector("#work").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
 
 </body>
 </html>
